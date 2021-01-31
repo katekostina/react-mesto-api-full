@@ -25,9 +25,8 @@
     "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject",
-    "deploy": "npm run build && scp -r ./build/* human@178.154.253.109:/home/human/projects/frontend-mesto"
-  },
+    "eject": "react-scripts eject"
+    },
   "eslintConfig": {
     "extends": "react-app"
   },

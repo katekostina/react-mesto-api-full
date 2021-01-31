@@ -100,7 +100,7 @@ class Api {
 
 // Create object with my token and base server url
 const api = new Api({
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.katekostina.students.nomoreparties.xyz",
 });
 
 export default api;
