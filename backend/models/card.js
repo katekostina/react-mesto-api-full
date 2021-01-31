@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const urlRegExp = require('../helpers/regexp');
 
 const cardSchema = new mongoose.Schema({
   name: {
@@ -12,7 +13,7 @@ const cardSchema = new mongoose.Schema({
     required: [true, 'Link to image for card required.'],
     validate: {
       validator(v) {
-        return /^https?:\/\/(www\.)?[\da-zA-Z-]*\.[\da-zA-Z-]*[\w-._~:/?#[\]@!$&'()*+,;=]*#?/gi.test(v);
+        return urlRegExp.test(v);
       },
       message: (props) => `${props.value} is not a valid link`,
     },
@@ -22,7 +23,11 @@ const cardSchema = new mongoose.Schema({
     ref: 'user',
     required: [true, 'Owner of card required'],
   },
-  likes: [{ type: mongoose.Schema.Types.ObjectId }],
+  likes: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: 'user',
+    default: [],
+  },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -17,11 +17,27 @@ const getMyProfile = (req, res, next) => {
     .catch(next);
 };
 
+const getProfile = (req, res, next) => {
+  const validId = /^[\da-z]{24}$/;
+  if (!validId.test(req.params.userId)) {
+    throw new BadRequestError('Неверный формат id пользователя.');
+  }
+  User.findById(req.params.userId)
+    .then((user) => {
+      if (user) {
+        res.status(200).send({ data: user });
+      } else {
+        throw new NotFoundError('Нет пользователя с таким id.');
+      }
+    })
+    .catch(next);
+};
+
 const createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password = '',
   } = req.body;
-  if (String(password).length < 8) {
+  if (String(password).trim().length < 8) {
     throw new BadRequestError('Пароль должен содержать не менее восьми символов.');
   }
   bcrypt
@@ -102,10 +118,18 @@ const login = (req, res, next) => {
     .catch(next);
 };
 
+const getUsers = (req, res, next) => {
+  User.find({})
+    .then((users) => res.status(200).send({ data: users }))
+    .catch(next);
+};
+
 module.exports = {
   createUser,
   updateMyProfile,
   updateMyAvatar,
   login,
   getMyProfile,
+  getUsers,
+  getProfile,
 };

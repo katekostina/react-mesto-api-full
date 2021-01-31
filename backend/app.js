@@ -8,6 +8,7 @@ const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/not-found-error');
+const urlRegExp = require('./helpers/regexp');
 require('dotenv').config();
 
 const { PORT = 3000 } = process.env;
@@ -51,7 +52,7 @@ app.post(
       password: Joi.string().required().min(8).max(30),
       name: Joi.string().min(2).max(30),
       about: Joi.string().min(2).max(30),
-      avatar: Joi.string().min(2).max(30),
+      avatar: Joi.string().pattern(urlRegExp),
     }),
   }),
   createUser,

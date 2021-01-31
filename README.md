@@ -10,3 +10,5 @@
 ## Бекенд:
 * api.katekostina.students.nomoreparties.xyz
 * www.api.katekostina.students.nomoreparties.xyz
+
+### Публичный Ipv4 178.154.253.109
