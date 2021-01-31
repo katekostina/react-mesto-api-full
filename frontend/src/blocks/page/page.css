@@ -1,0 +1,16 @@
+.page {
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #000;
+    font-family: 'Inter', 'Helvetica', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}

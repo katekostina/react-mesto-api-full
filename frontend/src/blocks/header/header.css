@@ -1,0 +1,20 @@
+@import url(./__logo/header__logo.css);
+@import url(./__line/header__line.css);
+@import url(./__content/header__content.css);
+@import url(./__navigation/header__navigation.css);
+@import url(./__link/header__link.css);
+@import url(./__email/header__email.css);
+@import url(./__logout/header__logout.css);
+
+.header {
+  margin: 0 auto;
+  width: 100%;
+  flex-grow: initial;
+}
+
+@media screen and (min-width: 1025px) {
+  .header {
+    width: 69%;
+    max-width: 882px;
+  }
+}

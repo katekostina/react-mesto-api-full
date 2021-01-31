@@ -1,0 +1,21 @@
+# Logs
+/backend/*.log
+
+/backend/npm-debug.log*
+
+# Dependency directory
+/backend/node_modules
+
+# Optional REPL history
+.DS_Store
+.idea
+.vscode
+
+/backend/.env
+
+# dependencies
+/frontend/node_modules
+
+# production
+/frontend/build
+

@@ -1,0 +1,17 @@
+.popup__bold-text {
+  font-family: "Inter", "Helvetics", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  text-align: center;
+  margin: 0 auto 25px;
+}
+
+@media screen and (min-width: 600px) {
+  .popup__bold-text {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}

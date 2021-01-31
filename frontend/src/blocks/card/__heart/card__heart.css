@@ -1,0 +1,20 @@
+@import url(./_state/card__heart_state_not_liked.css);
+@import url(./_state/card__heart_state_liked.css);
+
+.card__heart {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 21px;
+    height: 18px;
+    color: #000;
+}
+
+.card__heart:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.card__heart:focus {
+    outline: none;
+}

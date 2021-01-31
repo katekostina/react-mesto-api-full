@@ -1,0 +1,23 @@
+@import url(./__header/authentication__header.css);
+@import url(./__form/authentication__form.css);
+@import url(./__input/authentication__input.css);
+@import url(./__submit-button/authentication__submit-button.css);
+@import url(./__content/authentication__content.css);
+@import url(./__option/authentication__option.css);
+@import url(./__link/authentication__link.css);
+
+
+.authentication {
+  width: 88%;
+  margin: 65px auto 80px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1025px) {
+  .authentication {
+    width: 69%;
+    max-width: 882px;
+  }
+}
