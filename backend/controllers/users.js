@@ -37,16 +37,18 @@ const createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password = '',
   } = req.body;
-  if (String(password).trim().length < 8) {
+  const trimmedPassword = String(password).trim();
+  const trimmedEmail = String(email).trim();
+  if (trimmedPassword.length < 8) {
     throw new BadRequestError('Пароль должен содержать не менее восьми символов.');
   }
   bcrypt
-    .hash(password, 10)
+    .hash(trimmedPassword, 10)
     .then((hash) => User.create({
       name,
       about,
       avatar,
-      email,
+      email: trimmedEmail,
       password: hash,
     }))
     .then((user) => {
@@ -110,7 +112,9 @@ const updateMyAvatar = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password = '' } = req.body;
-  User.findUserByCredentials(email, password)
+  const trimmedPassword = String(password).trim();
+  const trimmedEmail = String(email).trim();
+  User.findUserByCredentials(trimmedEmail, trimmedPassword)
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, 'secret-key-is-here', { expiresIn: '7d' });
       res.send({ token });
