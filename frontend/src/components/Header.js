@@ -16,7 +16,7 @@ class Header extends Component {
     let navigation;
     switch (path) {
         case '/sign-up':
-          navigation = <NavLink className="header__link" to="/sing-in">Войти</NavLink>
+          navigation = <NavLink className="header__link" to="/sign-in">Войти</NavLink>
         break;
         case '/sign-in':
           navigation = <NavLink className="header__link" to="/sign-up">Регистрация</NavLink>
