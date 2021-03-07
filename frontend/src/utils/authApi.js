@@ -5,8 +5,8 @@ const handleOriginalResponse = (res) => {
 
   res
     .json()
-    .then((result) => console.log('AuthApi error:', result))
-    .catch((err) => console.log('AuthApi error:', err));
+    .then((result) => console.log("AuthApi error:", result))
+    .catch((err) => console.log("AuthApi error:", err));
 
   return Promise.reject(res);
 };
@@ -44,18 +44,19 @@ class AuthApi {
       method: "GET",
       headers: {
         ...this._headers,
-        "Accept": "application/json",
-        "Authorization" : `Bearer ${jwt}`,
+        Accept: "application/json",
+        Authorization: `Bearer ${jwt}`,
       },
     }).then(handleOriginalResponse);
   }
 }
 
 const authApi = new AuthApi({
-  baseUrl: "https://api.katekostina.students.nomoreparties.xyz",
+  baseUrl: "https://api.mesto.katekostina.students.nomoredomains.monster",
   headers: {
     "Content-Type": "application/json",
-    "User-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+    "User-agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
   },
 });
 

@@ -5,8 +5,8 @@ const handleOriginalResponse = (res) => {
 
   res
     .json()
-    .then((result) => console.log('Api error:', result))
-    .catch((err) => console.log('Api error:', err));
+    .then((result) => console.log("Api error:", result))
+    .catch((err) => console.log("Api error:", err));
 
   return Promise.reject(`Error: ${res.status}`);
 };
@@ -24,7 +24,7 @@ class Api {
   setToken(token) {
     this._headers = {
       ...basicHeaders,
-      "Authorization" : `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     };
   }
 
@@ -100,7 +100,7 @@ class Api {
 
 // Create object with my token and base server url
 const api = new Api({
-  baseUrl: "https://api.katekostina.students.nomoreparties.xyz",
+  baseUrl: "https://api.mesto.katekostina.students.nomoredomains.monster",
 });
 
 export default api;
