@@ -4,11 +4,11 @@
 # Домены
 
 ## Фронтенд:
-* katekostina.students.nomoreparties.xyz
-* www.katekostina.students.nomoreparties.xyz
- 
-## Бекенд:
-* api.katekostina.students.nomoreparties.xyz
-* www.api.katekostina.students.nomoreparties.xyz
+* mesto.katekostina.students.nomoredomains.monster
+* www.mesto.katekostina.students.nomoredomains.monster
 
-### Публичный Ipv4 178.154.253.109
+## Бекенд:
+* api.mesto.katekostina.students.nomoredomains.monster
+* www.api.mesto.katekostina.students.nomoredomains.monster
+
+### Публичный Ipv4 84.201.159.75
